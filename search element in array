@@ -1,0 +1,17 @@
+import numpy as np
+
+x = np.array([10, 20, 30, 40, 50])
+
+def index_arr(x, s_ele):
+    try:
+        for i in range(len(x)):
+            if x[i] == s_ele:
+                return i
+        raise ValueError("Element not found")
+    except ValueError as e:
+        print(e)
+        return -1
+
+s_ele = int(input("Enter the element to search: "))
+result = index_arr(x, s_ele)
+print(result)
