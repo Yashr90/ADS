@@ -1,0 +1,52 @@
+class StackNode:
+  def __init__(self,Newdata,link):
+    self.data=Newdata
+    self.next=link
+class Stack:
+  def __init__(self):
+    self.top=None
+    return self.top is None
+  def peek(self):
+    return self.top.data
+  def pop(self):
+    node=self.top
+    self.top=self.top.next
+    return node.data
+  def push(self,data):
+    self.top=StackNode(Newdata,self.top)
+  def display(self):
+    if self.top is None:
+      print("Empty Stack")
+    else:
+      curNode=self.top
+      while curNode is not None:
+        print(curNode.data,end=" --> ")
+        curNode=curNode.next
+s=Stack()
+while(True):
+  print("1.Push")
+  print("2.Pop")
+  print("3.Peek")
+  print("4.Display")
+  print("5.Exit")
+  choice=int(input("Enter your choice:"))
+  if choice==1:
+    data=int(input("Enter the data:"))
+    s.push(data)
+  elif choice==2:
+    if s.isEmpty():
+      print("Stack is empty")
+    else:
+      print("Popped element:",s.pop())
+  elif choice==3:
+      if s.isEmpty():
+        print("Stack is empty")
+      else:
+        print("Top element:",s.peek())
+  elif choice==4:
+        s.display()
+  elif choice==5:
+      break
+  else:
+      print("Invalid choice")
+      continue
