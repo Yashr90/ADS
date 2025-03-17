@@ -1,0 +1,16 @@
+def MergeList(arr,lend,rst,rend):
+  temp = []
+  i=lst
+  j=rst
+  while i<=lend and j<=rend:
+    if arr[i]<arr[j]:
+      temp.append(arr[i])
+      i+=1
+    else:
+      temp.append(arr[i])
+…  if left>=right:
+    return
+  mid=(left+right)//2
+  mergesort(arr,left,mid)
+  mergesort(arr,mid+1,right)
+  MergeList(arr,left,mid,right)
