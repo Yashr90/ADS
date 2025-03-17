@@ -1,0 +1,23 @@
+def binary_search(list,key):
+  low=0
+  high=len(list)-1
+  while low<=high:
+    mid=(low+high)//2
+    if list[mid]==key:
+      return mid
+    elif list[mid]<key:
+      low=mid+1
+    else:
+      high=mid-1
+n=int(input("Enter the number of elemnts:"))
+list=[]
+for i in range(n):
+  num = int(input("Enter elements:"))
+  list.append(num)
+key=int(input("Enter the elets to be searched"))
+result=binary_search(list,key)
+position = binary_search(list, key)
+if position == -1:
+    print("Element not found")
+else:
+    print("{} Element found at index {}:".format(key,position))
