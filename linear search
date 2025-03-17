@@ -1,0 +1,19 @@
+def linear_search(list,key):
+  size=len(list)
+  idx=0
+  while idx<len(list):
+    if list[idx]==key:
+      return idx
+    idx+=1
+  return -1
+n=int(input("Enter the size of the list: "))
+lst=[]
+for i in range(n):
+  num = int(input("Enter the element: "))
+  lst.append(num)
+key=int(input("Enter the element to be searched: "))
+result=linear_search(lst,key)
+if result==-1:
+  print("Element not found")
+else:
+  print("{} Element found at index {}:".format(key,result))
